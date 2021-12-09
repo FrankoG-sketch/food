@@ -3,6 +3,8 @@ import 'package:flutter/cupertino.dart';
 import '/Users/Customers/check_platform.dart';
 
 class ShowProgress extends StatelessWidget {
+  static var routeName = '/progress';
+
   @override
   Widget build(BuildContext context) {
     CheckPlatform checkPlatform = new CheckPlatform(context: context);

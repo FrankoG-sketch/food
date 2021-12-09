@@ -1,5 +1,3 @@
-// ignore_for_file: missing_return
-
 import 'package:flutter/material.dart';
 //import '../../custom_surfix_icon.dart';
 //import 'package:shop_app/components/form_error.dart';
@@ -82,6 +80,7 @@ class _SignFormState extends State<SignForm> {
         autofocus: false,
         controller: passwordController,
         obscureText: true,
+        // ignore: missing_return
         validator: (value) {
           RegExp regex = new RegExp(r'^.{6,}$');
           if (value.isEmpty) {
@@ -139,7 +138,7 @@ class _SignFormState extends State<SignForm> {
                     SizedBox(
                         height: 200,
                         child: Image.asset(
-                          "assets/logo.png",
+                          "",
                           fit: BoxFit.contain,
                         )),
                     SizedBox(height: 45),

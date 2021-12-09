@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/Users/Customers/screens/home/Food_items/List.dart';
 
 import '/../size_config.dart';
+import '../Food_items/Popularitems.dart';
+//import '../Food_items/List.dart';
 
 class SectionTitle extends StatelessWidget {
   const SectionTitle({
@@ -24,12 +27,12 @@ class SectionTitle extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        GestureDetector(
-          onTap: press,
+        TextButton(
           child: Text(
             "See More",
             style: TextStyle(color: Color(0xFFBBBBBB)),
           ),
+          onPressed: () => Navigator.pushNamed(context, Popitems.routeName),
         ),
       ],
     );

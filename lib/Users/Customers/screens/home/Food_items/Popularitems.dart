@@ -1,12 +1,28 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/Users/Customers/components/product_card.dart';
 import 'package:shop_app/Users/Customers/models/Product.dart';
-
+//import 'package:shop_app/services/PopularService.dart';
+//import 'package:shop_app/Users/Customers/models/Product.dart';
+import '../../home/components/section_title.dart';
 import '/../size_config.dart';
+import 'package:shop_app/Users/Customers/components/product_card.dart';
+import 'List.dart';
 
-import 'section_title.dart';
+class Popitems extends StatelessWidget {
+  static var routeName;
 
-class PopularProducts extends StatelessWidget {
+  void initState() {
+    // super.initState();
+    fetchDatabaseList();
+  }
+
+  fetchDatabaseList() async {
+    dynamic resultant = await ListPage().getFoodList();
+
+    if (resultant == null) {
+      print('Unable to retrieve');
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -27,8 +43,7 @@ class PopularProducts extends StatelessWidget {
                   if (demoProducts[index].isPopular)
                     return ProductCard(product: demoProducts[index]);
 
-                  return SizedBox
-                      .shrink(); // here by default width and height is 0
+                  return SizedBox.shrink();
                 },
               ),
               SizedBox(width: getProportionateScreenWidth(20)),

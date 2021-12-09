@@ -1,5 +1,6 @@
 //import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+//import 'package:firebase_core/firebase_core.dart';
 import '../../../Model/User_model.dart';
 //import '../../../Users/Customers/screens/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -28,7 +29,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final emailEditingController = new TextEditingController();
   final passwordEditingController = new TextEditingController();
   final confirmPasswordEditingController = new TextEditingController();
-  final addressEditingController = new TextEditingController();
+  //final addressEditingController = new TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +68,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         keyboardType: TextInputType.name,
         validator: (value) {
           if (value.isEmpty) {
-            return ("Second Name cannot be Empty");
+            return ("Last Name cannot be Empty");
           }
           return null;
         },
@@ -78,7 +79,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         decoration: InputDecoration(
           prefixIcon: Icon(Icons.account_circle),
           contentPadding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          hintText: "Second Name",
+          hintText: "Last Name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
@@ -213,7 +214,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                     SizedBox(
                         height: 180,
                         child: Image.asset(
-                          "assets/logo.png",
+                          "assets/images/groceries.png",
                           fit: BoxFit.contain,
                         )),
                     SizedBox(height: 45),

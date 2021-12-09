@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'package:shop_app/Authentication/socal_card.dart';
 import 'package:shop_app/constants.dart';
 import 'package:shop_app/size_config.dart';
@@ -56,4 +56,4 @@ class Body extends StatelessWidget {
       ),
     );
   }
-}
+}*/
