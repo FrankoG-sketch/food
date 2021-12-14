@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:shop_app/Users/Customers/screens/home/Food_items/List.dart';
 
 import '/../size_config.dart';
 import '../Food_items/Popularitems.dart';
@@ -28,12 +27,14 @@ class SectionTitle extends StatelessWidget {
           ),
         ),
         TextButton(
-          child: Text(
-            "See More",
-            style: TextStyle(color: Color(0xFFBBBBBB)),
-          ),
-          onPressed: () => Navigator.pushNamed(context, Popitems.routeName),
-        ),
+            child: Text(
+              "See More",
+              style: TextStyle(color: Color(0xFFBBBBBB)),
+            ),
+            onPressed: () {
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => Popitems()));
+            }),
       ],
     );
   }

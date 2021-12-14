@@ -58,3 +58,33 @@ class CartCard extends StatelessWidget {
     );
   }
 }
+
+class CartButton extends StatelessWidget {
+  const CartButton({
+    Key key,
+    this.text,
+    this.press,
+  }) : super(key: key);
+  final String text;
+  final Function press;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: double.infinity,
+      height: getProportionateScreenHeight(56),
+      child: TextButton(
+        style: TextButton.styleFrom(
+          primary: kPrimaryColor,
+          padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        ),
+        onPressed: () {
+          //Navigator.pushNamed(context, SignInScreen.routeName);
+        },
+        child: const Text('Add to Cart'),
+      ),
+    );
+  }
+}

@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:shop_app/Users/Customers/screens/home/home_screen.dart';
 import 'package:shop_app/Authentication/profile/profile_screen.dart';
-import '../Users/Customers/screens/progress.dart';
+import 'package:shop_app/Users/Customers/screens/home/widget/shopping_cart.dart';
+//import '../Users/Customers/screens/progress.dart';
 import '/constants.dart';
 import '/enums.dart';
+//import '../Users/Customers/screens/cart/cart_screen.dart';
 
 class CustomBottomNavBar extends StatelessWidget {
   const CustomBottomNavBar({
@@ -53,10 +55,13 @@ class CustomBottomNavBar extends StatelessWidget {
                 onPressed: () {},
               ),
               IconButton(
-                icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
-                onPressed: () =>
-                    Navigator.pushNamed(context, ShowProgress.routeName),
-              ),
+                  icon: SvgPicture.asset("assets/icons/Cart Icon.svg"),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => ShoppingCartWidget()));
+                  }),
               IconButton(
                 icon: SvgPicture.asset("assets/icons/Chat bubble Icon.svg"),
                 onPressed: () {},

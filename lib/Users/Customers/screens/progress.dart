@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import '/Users/Customers/check_platform.dart';
+import 'package:shop_app/Authentication/coustom_bottom_nav_bar.dart';
+
+import '../../../enums.dart';
 
 class ShowProgress extends StatelessWidget {
   static var routeName = '/progress';
-
   @override
   Widget build(BuildContext context) {
-    CheckPlatform checkPlatform = new CheckPlatform(context: context);
-    return checkPlatform.isIOS()
-        ? Container(
-            child: Center(
-              child: CupertinoActivityIndicator(
-                radius: 15.0,
-              ),
-            ),
-          )
-        : Container(
-            child: Center(
-              child: CircularProgressIndicator(),
-            ),
-          );
+    return MaterialApp(
+      title: 'Welcome to Flutter',
+      home: Scaffold(
+        appBar: AppBar(
+          title: const Text('Welcome to Flutter'),
+        ),
+        body: const Center(
+          child: Text('Hello World'),
+        ),
+        bottomNavigationBar: CustomBottomNavBar(selectedMenu: MenuState.home),
+      ),
+    );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shop_app/Users/Customers/screens/home/Food_items/List.dart';
 
 import '../../models/Product.dart';
 import 'components/body.dart';
@@ -21,6 +22,7 @@ class DetailsScreen extends StatelessWidget {
 
 class ProductDetailsArguments {
   final Product product;
+  final Food popular;
 
-  ProductDetailsArguments({@required this.product});
+  ProductDetailsArguments({@required this.product, @required this.popular});
 }

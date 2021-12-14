@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/Authentication/default_button.dart';
 
+import 'cart_card.dart';
 import '/../constants.dart';
 import '/../size_config.dart';
 
@@ -76,7 +76,7 @@ class CheckoutCard extends StatelessWidget {
                 ),
                 SizedBox(
                   width: getProportionateScreenWidth(190),
-                  child: DefaultButton(
+                  child: CartButton(
                     text: "Check Out",
                     press: () {},
                   ),

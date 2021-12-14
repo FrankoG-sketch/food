@@ -62,7 +62,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
         ));
 
     //second name field
-    final secondNameField = TextFormField(
+    final lastNameField = TextFormField(
         autofocus: false,
         controller: lastNameEditingController,
         keyboardType: TextInputType.name,
@@ -211,16 +211,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
-                    SizedBox(
+                    /*SizedBox(
                         height: 180,
                         child: Image.asset(
                           "assets/images/groceries.png",
                           fit: BoxFit.contain,
-                        )),
+                        )),*/
                     SizedBox(height: 45),
                     firstNameField,
                     SizedBox(height: 20),
-                    secondNameField,
+                    lastNameField,
                     SizedBox(height: 20),
                     emailField,
                     SizedBox(height: 20),
@@ -286,7 +286,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     FirebaseFirestore firebaseFirestore = FirebaseFirestore.instance;
     User user = _auth.currentUser;
 
-    UserModel userModel = UserModel();
+    UserMod userModel = UserMod();
 
     // writing all the values
     userModel.email = user.email;

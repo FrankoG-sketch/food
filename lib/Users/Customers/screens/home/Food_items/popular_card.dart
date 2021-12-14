@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:shop_app/Users/Customers/models/Product.dart';
 import 'package:shop_app/Users/Customers/screens/details/details_screen.dart';
-
+import 'List.dart';
 import '/constants.dart';
 import '/size_config.dart';
 
@@ -15,7 +14,7 @@ class ProductCard extends StatelessWidget {
   }) : super(key: key);
 
   final double width, aspectRetio;
-  final Product product;
+  final Food product;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +26,7 @@ class ProductCard extends StatelessWidget {
           onTap: () => Navigator.pushNamed(
             context,
             DetailsScreen.routeName,
-            arguments: ProductDetailsArguments(product: product, popular: null),
+            arguments: ProductDetailsArguments(popular: product, product: null),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,

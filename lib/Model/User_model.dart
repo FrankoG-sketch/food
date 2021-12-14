@@ -1,16 +1,15 @@
-class UserModel {
+class UserMod {
   String uid;
   String email;
   String firstName;
   String lastName;
   var address;
 
-  UserModel(
-      {this.uid, this.email, this.firstName, this.lastName, this.address});
+  UserMod({this.uid, this.email, this.firstName, this.lastName, this.address});
 
   // receiving data from server
-  factory UserModel.fromMap(map) {
-    return UserModel(
+  factory UserMod.fromMap(map) {
+    return UserMod(
       uid: map['uid'],
       email: map['email'],
       firstName: map['firstName'],

@@ -19,9 +19,11 @@ class DefaultButton extends StatelessWidget {
       height: getProportionateScreenHeight(56),
       child: TextButton(
         style: TextButton.styleFrom(
-            primary: kPrimaryColor, padding: EdgeInsets.fromLTRB(20, 15, 20, 15)
-            //shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-            ),
+          primary: kPrimaryColor,
+          padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        ),
         onPressed: () {
           Navigator.pushNamed(context, SignInScreen.routeName);
         },

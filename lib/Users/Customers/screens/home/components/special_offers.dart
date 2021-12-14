@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '/../size_config.dart';
-import 'section_title.dart';
+//import 'section_title.dart';
+//import '../Food_items/Popularitems.dart';
 
 class SpecialOffers extends StatelessWidget {
   const SpecialOffers({
@@ -15,7 +15,7 @@ class SpecialOffers extends StatelessWidget {
         Padding(
           padding:
               EdgeInsets.symmetric(horizontal: getProportionateScreenWidth(20)),
-          child: SectionTitle(
+          child: SeeMore(
             title: "Special for you",
             press: () {},
           ),
@@ -108,6 +108,40 @@ class SpecialOfferCard extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class SeeMore extends StatelessWidget {
+  const SeeMore({
+    Key key,
+    @required this.title,
+    @required this.press,
+  }) : super(key: key);
+
+  final String title;
+  final GestureTapCallback press;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Text(
+          title,
+          style: TextStyle(
+            fontSize: getProportionateScreenWidth(18),
+            color: Colors.black,
+          ),
+        ),
+        TextButton(
+          child: Text(
+            "See More",
+            style: TextStyle(color: Color(0xFFBBBBBB)),
+          ),
+          onPressed: () {},
+        ),
+      ],
     );
   }
 }
