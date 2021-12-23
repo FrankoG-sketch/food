@@ -17,11 +17,11 @@ Future<String> getCurrentUID() async {
 }
 
 class Authentication {
-
   //SIGN UP.....................................................................
   Future signUp(BuildContext context, String email, String name,
       String password, String address) async {
     try {
+      FocusScope.of(context).requestFocus(FocusNode());
       UserCredential result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
 
@@ -42,7 +42,7 @@ class Authentication {
         'uid': uid,
         'path': path,
         'date': date,
-       // 'role': role,
+        // 'role': role,
       };
 
       var userInformationObject = {
@@ -126,6 +126,8 @@ class Authentication {
     try {
       var date = DateTime.now();
 
+      FocusScope.of(context).requestFocus(FocusNode());
+
       var userTokenDataObject = {
         'Email': email,
         'Date': date,
@@ -136,17 +138,19 @@ class Authentication {
 
       SharedPreferences prefs = await SharedPreferences.getInstance();
       prefs.setString('email', email);
-      prefs.setString('password', password);
 
-      await FirebaseFirestore.instance
-          .collection('Users Token Data')
-          .doc(result.user.uid)
-          .set(userTokenDataObject);
+      Navigator.of(context).pushNamedAndRemoveUntil(
+          '/homePage', (Route<dynamic> route) => false);
 
-      final DocumentSnapshot snapshot = await FirebaseFirestore.instance
-          .collection("Users")
-          .doc(result.user.uid)
-          .get();
+      // await FirebaseFirestore.instance
+      //     .collection('Users Token Data')
+      //     .doc(result.user.uid)
+      //     .set(userTokenDataObject);
+
+      // final DocumentSnapshot snapshot = await FirebaseFirestore.instance
+      //     .collection("Users")
+      //     .doc(result.user.uid)
+      //     .get();
 
       // String role = snapshot['role'];
 
@@ -159,8 +163,7 @@ class Authentication {
       //     .then((value) {
       //   if (role.isNotEmpty) {
       //     if (role == 'User') {
-      //       Navigator.of(context).pushNamedAndRemoveUntil(
-      //           '/userHomePage', (Route<dynamic> route) => false);
+      //
       //     } else if (role == 'Admin') {
       //       Navigator.of(context).pushNamedAndRemoveUntil(
       //           '/adminHomePage', (Route<dynamic> route) => false);

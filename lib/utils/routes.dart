@@ -35,6 +35,7 @@
 // };
 
 import 'package:flutter/material.dart';
+import 'package:shop_app/pages/homePage.dart';
 import 'package:shop_app/pages/signUp.dart';
 import 'package:shop_app/pages/signIn.dart';
 
@@ -47,8 +48,8 @@ class RouteGenerator {
       case '/signIn':
         return MaterialPageRoute(builder: (context) => SignIn());
 
-      // case '/login':
-      //   return MaterialPageRoute(builder: (context) => LoginPage());
+      case '/homePage':
+        return MaterialPageRoute(builder: (context) => HomePage());
 
       // case '/doctor':
       //   return MaterialPageRoute(builder: (context) => Doctors());
