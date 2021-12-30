@@ -128,6 +128,14 @@ class Authentication {
 
       FocusScope.of(context).requestFocus(FocusNode());
 
+<<<<<<< HEAD
+=======
+      var userTokenDataObject = {
+        'Email': email,
+        'Date': date,
+      };
+
+>>>>>>> b0edc2f6fca7dac34f99329a204ad8bc902d1c49
       UserCredential result = await _auth.signInWithEmailAndPassword(
           email: email, password: password);
 

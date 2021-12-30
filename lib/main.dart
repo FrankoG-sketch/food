@@ -1,5 +1,6 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:shop_app/Authentication/signIn.dart';
@@ -16,6 +17,25 @@ import 'constants/firebase.dart';
 //import 'controllers/appController.dart';
 
 //import 'controllers/products_controller.dart';
+=======
+// import 'package:get/get.dart';
+import 'package:shop_app/pages/homePage.dart';
+import 'package:shop_app/pages/signIn.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+//import 'package:shop_app/Users/Supermarket/home.dart';
+import 'package:shop_app/utils/routes.dart';
+//import 'package:shop_app/screens/home/home_screen.dart';
+//import 'package:shop_app/screens/profile/profile_screen.dart';
+// import 'package:shop_app/Authentication/splash/splash_screen.dart';
+//import 'package:firebase_core/firebase_core.dart';
+
+// import 'constants/firebase.dart';
+// import 'controllers/appController.dart';
+// import 'controllers/authController.dart';
+// import 'controllers/cart_controller.dart';
+// import 'controllers/products_controller.dart';
+>>>>>>> b0edc2f6fca7dac34f99329a204ad8bc902d1c49
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -48,14 +68,23 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: theme(),
+
       //home: HomeScreen(),
+<<<<<<< HEAD
       home: login != null ? SignIn() : HomeScreen(),
 
       //Cals(),
       // We use routeName so that we dont need to remember the name
       //initialRoute: "/",
       routes: routes,
+=======
+      home: login != null ? HomePage() : SignIn(),
+
+      //Cals(),
+      // We use routeName so that we dont need to remember the name
+      initialRoute: "/",
+      onGenerateRoute: RouteGenerator.generateRoute,
+>>>>>>> b0edc2f6fca7dac34f99329a204ad8bc902d1c49
     );
   }
 }
